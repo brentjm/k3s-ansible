@@ -5,8 +5,8 @@
   become: true
   roles:
     - role: prereq
-    - role: airgap
-    - role: raspberrypi
+      #    - role: airgap
+      #    - role: raspberrypi
 
 - name: Setup K3S server
   hosts: server
