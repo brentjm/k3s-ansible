@@ -4,7 +4,7 @@ NODE_BOXES = ['generic/ubuntu2004', 'generic/ubuntu2004', 'generic/ubuntu2004', 
 NODE_CPUS = 2
 NODE_MEMORY = 2048
 # Virtualbox >= 6.1.28 require `/etc/vbox/network.conf` for expanded private networks 
-NETWORK_PREFIX = "10.10.10"
+NETWORK_PREFIX = "192.168.56"
 
 def provision(vm, role, node_num)
   vm.box = NODE_BOXES[node_num]
