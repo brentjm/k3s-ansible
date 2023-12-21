@@ -1,9 +1,0 @@
----
-- hosts: all
-  tasks:
-  - name: Check Anaible Version
-    command: ansible --version
-      #  register: ansibleVersion
-  - name: Print version
-    debug:
-      msg: "Hello World"
