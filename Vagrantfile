@@ -1,6 +1,7 @@
 # ENV['VAGRANT_NO_PARALLEL'] = 'no'
-NODE_ROLES = ["control", "host-0", "host-1"]
+NODE_ROLES = ["host-0", "host-1", "host-2"]
 NODE_BOXES = ['generic/ubuntu2004', 'generic/ubuntu2004', 'generic/ubuntu2004']
+SSH_PORTS = [2201, 2202, 2203]
 NODE_CPUS = 2
 NODE_MEMORY = 2048
 # Virtualbox >= 6.1.28 require `/etc/vbox/network.conf` for expanded private networks 
@@ -16,9 +17,10 @@ def provision(vm, role, node_num)
   # during provisioning. This makes it impossible to know the server-0 IP when 
   # provisioning subsequent servers and agents. A private network allows us to
   # assign static IPs to each node, and thus provide a known IP for the API endpoint.
-  node_ip = "#{NETWORK_PREFIX}.#{100+node_num}"
+  node_ip = "#{NETWORK_PREFIX}.#{100+node_num+1}"
   # An expanded netmask is required to allow VM<-->VM communication, virtualbox defaults to /32
   vm.network "private_network", ip: node_ip, netmask: "255.255.255.0"
+  vm.network "forwarded_port", guest: 22, host: SSH_PORTS[node_num], id: "ssh"
 
 end
 

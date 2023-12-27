@@ -1,10 +1,10 @@
 myhosts:
   hosts:
     control:
-      ansible_host: 192.168.56.100
-    host-0:
       ansible_host: 192.168.56.101
-    host-1: 
+    host-0:
       ansible_host: 192.168.56.102
+    host-1: 
+      ansible_host: 192.168.56.103
   vars:
     ansible_ssh_user: vagrant
