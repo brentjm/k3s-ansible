@@ -1,5 +1,5 @@
 # ENV['VAGRANT_NO_PARALLEL'] = 'no'
-NODE_ROLES = ["host-0", "host-1", "host-2"]
+NODE_ROLES = ["server-0", "agent-0", "agent-1"]
 NODE_BOXES = ['generic/ubuntu2004', 'generic/ubuntu2004', 'generic/ubuntu2004']
 SSH_PORTS = [2201, 2202, 2203]
 NODE_CPUS = 2
