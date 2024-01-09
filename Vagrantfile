@@ -25,7 +25,7 @@ def provision(vm, role, node_num)
   vm.provision "ansible", run: 'once' do |ansible|
     ansible.compatibility_mode = "2.0"
     ansible.playbook = "playbook/site.yml"
-    ansible.verbose = "vvv"
+    #ansible.verbose = "vvv"
     ansible.groups = {
       "server" => NODE_ROLES.grep(/^server/),
       "agent" => NODE_ROLES.grep(/^agent/),

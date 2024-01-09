@@ -10,7 +10,7 @@
     group: root
     mode: 0755
 
-- name: Download K3s binary
+- name: Download K3s biPodsnary
   when: airgap_dir is undefined
   ansible.builtin.command:
     cmd: /usr/local/bin/k3s-install.sh
